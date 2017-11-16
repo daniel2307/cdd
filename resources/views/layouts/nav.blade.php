@@ -84,7 +84,7 @@
             <!-- </div> -->
         </li>
         <li class="dropdown nav-item">
-            <a href="javascript:;" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ Auth::user()->name }} {{ Auth::user()->type }} <b class="caret"></b></a>
+            <a href="javascript:;" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> gggggggggg <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="dropdown-item">
                     <a href="javascript:;"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -96,15 +96,7 @@
                     <a href="javascript:;"><i class="fa fa-fw fa-gear"></i> Settings</a>
                 </li>
                 <li class="divider"></li>
-                <li class="dropdown-item">
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="fa fa-fw fa-power-off"></i>
-                        Log Out
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
-                </li>
+                
             </ul>
         </li>
     </ul>
