@@ -17,3 +17,6 @@ Route::get('/', function () {
 Route::get('/stadistic', function () {
     return view('stadistic');
 });
+Route::get('/encuesta', function () {
+    return view('encuesta');
+});

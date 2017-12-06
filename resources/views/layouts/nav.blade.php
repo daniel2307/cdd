@@ -16,10 +16,7 @@
                 <a href="/stadistic" id><i class="fa fa-fw fa-user"></i> Estadistica</a>
             </li>
             <li class="list-group-item">
-                <a href="/products"><i class="fa fa-fw fa-tags"></i> Productos</a>
-            </li>
-            <li class="list-group-item">
-                <a href="/categorias"><i class="fa fa-fw fa-tree"></i> Categorias</a>
+                <a href="/encuesta"><i class="fa fa-fw fa-tags"></i> Encuesta modelo 3</a>
             </li>
             <li class="list-group-item">
                 <a href="#"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>

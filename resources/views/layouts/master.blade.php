@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DORTMUND</title>
+    <title>Coleccion de Datos</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Dashboard <small>dortmund</small>
+                            Dashboard <small>Coleccion de datos</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
