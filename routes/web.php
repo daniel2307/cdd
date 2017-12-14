@@ -20,5 +20,10 @@ Route::get('/stadistic', function () {
 Route::get('/modelo3', function () {
     return view('encuesta');
 });
+Route::get('/random', function () {
+    return view('random');
+});
+Route::post('/random', 'modelo3Controller@insertRandom');
+
 Route::post('/modelo3', 'modelo3Controller@store');
 Route::get('/aleatorio', 'modelo3Controller@aleatorio');

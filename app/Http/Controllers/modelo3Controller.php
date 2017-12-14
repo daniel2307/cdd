@@ -8,8 +8,9 @@ use App\MetodoCongruencialMixto;
 
 class modelo3Controller extends Controller
 {
-    public function index(){
 
+    public function index(){
+    	
     }
     public function store(Request $request){
 
@@ -108,4 +109,59 @@ class modelo3Controller extends Controller
     	$valores = MetodoCongruencialMixto::Method(4, 5, 7, 8);
     	dd($valores);
     }
+
+    public function insertRandom(Request $request){
+    	$pregunta2 = ['Masculino', 'Femenino'];
+		$pregunta5 = ['En este lugar', 'En otro lugar del pais', 'En el exterior'];
+		$pregunta8 = ['Boliviano/a rural', 'Boliviano/a urbano', 'Extranjero'];
+		$pregunta9 = ['Medicina general', 'Medicina especializada', 'Otro'];
+		$pregunta10 = ['Madrugar', 'Via telefonica', 'Comprar ficha dia anterior', 'Via internet', 'Otro'];
+		$pregunta15 = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+		$pregunta16 = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'];
+		$pregunta20 = ['Calidad', 'Servicio', 'Garantia', 'Precio'];
+
+    	while ($request->cantidad > 0) {
+    		$preg = [
+    			'pregunta1' => 'anonimo',
+    			'pregunta2' => array_random($pregunta2),
+    			'pregunta3' => rand(18,60),
+    			'pregunta4' => $this->random_date('1957-01-01', '1999-12-30'),
+    			'pregunta5' => array_random($pregunta5),
+    			'pregunta6' => rand(1, 240),
+    			'pregunta7' => rand(1, 120),
+    			'pregunta8' => array_random($pregunta8),
+    			'pregunta9' => array_random($pregunta9),
+    			'pregunta10' => array_random($pregunta10),
+    			'pregunta11' => rand(1, 72),
+    			'pregunta12' => rand(0, 180),
+    			'pregunta13' => rand(10, 60),
+    			'pregunta14' => rand(0, 5),
+    			'pregunta15' => array_random($pregunta15, rand(1, 3)),
+    			'pregunta16' => array_random($pregunta16, rand(1, 2)),
+    			'pregunta17' => rand(1, 10),
+    			'pregunta18' => rand(1, 10),
+    			'pregunta19' => rand(1, 10),
+    			'pregunta20' => array_random($pregunta20),
+    		];
+			dd($preg);
+			$request->cantidad--;
+    	}
+    }
+
+    public function random_date($from, $to) {
+	    if (!$to) {
+	        $to = date('U');
+	    }
+	    if (!ctype_digit($from)) {
+	        $from = strtotime($from);
+	    }
+	    if (!ctype_digit($to)) {
+	        $to = strtotime($to);
+	    }
+	    return date('Y-m-d', rand($from, $to));
+	}
+    public function borrarModelo3(){
+    	DB::table('modelo3')->delete();
+    }
+
 }

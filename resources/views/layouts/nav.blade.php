@@ -19,7 +19,7 @@
                 <a href="/modelo3"><i class="fa fa-fw fa-tags"></i> Encuesta modelo 3</a>
             </li>
             <li class="list-group-item">
-                <a href="#"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                <a href="/random"><i class="fa fa-fw fa-desktop"></i> Generar Datos</a>
             </li>
             <li class="list-group-item">
                 <a href="#"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
