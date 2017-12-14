@@ -111,6 +111,7 @@ class modelo3Controller extends Controller
     }
 
     public function insertRandom(Request $request){
+    	$this->borrarModelo3();
     	$pregunta2 = ['Masculino', 'Femenino'];
 		$pregunta5 = ['En este lugar', 'En otro lugar del pais', 'En el exterior'];
 		$pregunta8 = ['Boliviano/a rural', 'Boliviano/a urbano', 'Extranjero'];
@@ -120,9 +121,20 @@ class modelo3Controller extends Controller
 		$pregunta16 = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'];
 		$pregunta20 = ['Calidad', 'Servicio', 'Garantia', 'Precio'];
 
+		$resp15 = array_random($pregunta15, rand(1, 3));
+    	$resp16 = array_random($pregunta16, rand(1, 2));
+    	$preg15 = '';
+    	$preg16 = '';
+    	foreach ($resp15 as $value) {
+    		$preg15 .= $value . '+';
+    	}
+    	foreach ($resp16 as $value) {
+    		$preg16 .= $value . '+';
+    	}
+
     	while ($request->cantidad > 0) {
     		$preg = [
-    			'pregunta1' => 'anonimo',
+    			'pregunta1' => 'anonimo' . $request->cantidad,
     			'pregunta2' => array_random($pregunta2),
     			'pregunta3' => rand(18,60),
     			'pregunta4' => $this->random_date('1957-01-01', '1999-12-30'),
@@ -136,18 +148,44 @@ class modelo3Controller extends Controller
     			'pregunta12' => rand(0, 180),
     			'pregunta13' => rand(10, 60),
     			'pregunta14' => rand(0, 5),
-    			'pregunta15' => array_random($pregunta15, rand(1, 3)),
-    			'pregunta16' => array_random($pregunta16, rand(1, 2)),
+    			'pregunta15' => $preg15,
+    			'pregunta16' => $preg16,
     			'pregunta17' => rand(1, 10),
     			'pregunta18' => rand(1, 10),
     			'pregunta19' => rand(1, 10),
     			'pregunta20' => array_random($pregunta20),
     		];
-			dd($preg);
 			$request->cantidad--;
+			$this->guardar($preg);
+
     	}
+    	return redirect('/');
     }
 
+    public function guardar($request){
+    	DB::table('modelo3')->insert([
+    		'pregunta1' => $request['pregunta1'], 
+		    'pregunta2' => $request['pregunta2'],
+		    'pregunta3' => $request['pregunta3'], 
+		    'pregunta4' => $request['pregunta4'],
+		    'pregunta5' => $request['pregunta5'], 
+		    'pregunta6' => $request['pregunta6'],
+		    'pregunta7' => $request['pregunta7'], 
+		    'pregunta8' => $request['pregunta8'],
+		    'pregunta9' => $request['pregunta9'], 
+		    'pregunta10' => $request['pregunta10'],
+		    'pregunta11' => $request['pregunta11'], 
+		    'pregunta12' => $request['pregunta12'],
+		    'pregunta13' => $request['pregunta13'], 
+		    'pregunta14' => $request['pregunta14'],
+		    'pregunta15' => $request['pregunta15'], 
+		    'pregunta16' => $request['pregunta16'],
+		    'pregunta17' => $request['pregunta17'],
+		    'pregunta18' => $request['pregunta18'], 
+		    'pregunta19' => $request['pregunta19'],
+		    'pregunta20' => $request['pregunta20'], 
+		]);
+    }
     public function random_date($from, $to) {
 	    if (!$to) {
 	        $to = date('U');
