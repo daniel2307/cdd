@@ -17,6 +17,8 @@ Route::get('/', function () {
 Route::get('/stadistic', function () {
     return view('stadistic');
 });
-Route::get('/encuesta', function () {
+Route::get('/modelo3', function () {
     return view('encuesta');
 });
+Route::post('/modelo3', 'modelo3Controller@store');
+Route::get('/aleatorio', 'modelo3Controller@aleatorio');
