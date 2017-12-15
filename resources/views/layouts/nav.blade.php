@@ -13,7 +13,7 @@
                 <a href="/"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
             <li class="list-group-item">
-                <a href="/stadistic" id><i class="fa fa-fw fa-user"></i> Estadistica</a>
+                <a href="/estadisticas" id><i class="fa fa-fw fa-user"></i> Estadistica</a>
             </li>
             <li class="list-group-item">
                 <a href="/modelo3"><i class="fa fa-fw fa-tags"></i> Encuesta modelo 3</a>

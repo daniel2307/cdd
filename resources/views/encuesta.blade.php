@@ -75,7 +75,7 @@
                     </div>
 
                     <fieldset class="form-group">
-                        <label>7. ¿Hace cuánto tiempo fue la primera vez que visito este hospital?</label>
+                        <label>7. ¿Hace cuánto tiempo fue la ultima vez que visito este hospital?</label>
                         <div class="row">
                             <div class="col-xl-4">
                                 <input name="pregunta71" class="form-control" type="number" placeholder="Años">

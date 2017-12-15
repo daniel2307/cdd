@@ -9,8 +9,197 @@ use App\MetodoCongruencialMixto;
 class modelo3Controller extends Controller
 {
 
-    public function index(){
-    	
+    public function resultados(){
+        $pregunta2 = [
+            ['name' => 'Masculino', 'valor' => DB::table('modelo3')->where('pregunta2', 'Masculino')->count()],
+            ['name' => 'Femenino', 'valor' => DB::table('modelo3')->where('pregunta2', 'Femenino')->count()],
+        ];
+        $pregunta3 = [
+            ['name' => '18-30 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta3', array(18, 29))->count()],
+            ['name' => '30-45 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta3', array(30, 44))->count()],
+            ['name' => '45-60 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta3', array(45, 60))->count()],
+        ];
+        $pregunta5 = [
+            ['name' => 'En este lugar', 'valor' => DB::table('modelo3')->where('pregunta5', 'En este lugar')->count()],
+            ['name' => 'En otro lugar del pais', 'valor' => DB::table('modelo3')->where('pregunta5', 'En otro lugar del pais')->count()],
+            ['name' => 'En el exterior', 'valor' => DB::table('modelo3')->where('pregunta5', 'En el exterior')->count()],
+        ];
+        $pregunta6 = [
+            ['name' => '0-5 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta6', array(0, 59))->count()],
+            ['name' => '5-10 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta6', array(60, 119))->count()],
+            ['name' => '10-15 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta6', array(120, 179))->count()],
+            ['name' => '15-20 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta6', array(180, 240))->count()],
+        ];
+        $pregunta7 = [
+            ['name' => '0-2 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta7', array(0, 23))->count()],
+            ['name' => '2-4 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta7', array(24, 47))->count()],
+            ['name' => '4-6 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta7', array(48, 71))->count()],
+            ['name' => '6-8 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta7', array(72, 95))->count()],
+            ['name' => '8-10 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta7', array(96, 120))->count()],
+        ];
+        $pregunta8 = [
+            ['name' => 'Boliviano/a rural', 'valor' => DB::table('modelo3')->where('pregunta8', 'Boliviano/a rural')->count()],
+            ['name' => 'Boliviano/a urbano', 'valor' => DB::table('modelo3')->where('pregunta8', 'Boliviano/a urbano')->count()],
+            ['name' => 'Extranjero', 'valor' => DB::table('modelo3')->where('pregunta8', 'Extranjero')->count()],
+        ];
+        $pregunta9 = [
+            ['name' => 'Medicina general', 'valor' => DB::table('modelo3')->where('pregunta9', 'Medicina general')->count()],
+            ['name' => 'Medicina especializada', 'valor' => DB::table('modelo3')->where('pregunta9', 'Medicina especializada')->count()],
+            ['name' => 'Otro', 'valor' => DB::table('modelo3')->where('pregunta9', 'Otro')->count()],
+        ];
+        $pregunta10 = [
+            ['name' => 'Madrugar', 'valor' => DB::table('modelo3')->where('pregunta10', 'Madrugar')->count()],
+            ['name' => 'Via telefonica', 'valor' => DB::table('modelo3')->where('pregunta10', 'Via telefonica')->count()],
+            ['name' => 'Comprar ficha dia anterior', 'valor' => DB::table('modelo3')->where('pregunta10', 'Comprar ficha dia anterior')->count()],
+            ['name' => 'Via internet', 'valor' => DB::table('modelo3')->where('pregunta10', 'Via internet')->count()],
+            ['name' => 'Otro', 'valor' => DB::table('modelo3')->where('pregunta10', 'Otro')->count()],
+        ];
+        $pregunta11 = [
+            ['name' => '0-12 horas', 'valor' => DB::table('modelo3')->whereBetween('pregunta11', array(0, 11))->count()],
+            ['name' => '12-24 horas', 'valor' => DB::table('modelo3')->whereBetween('pregunta11', array(12, 23))->count()],
+            ['name' => '24-36 horas', 'valor' => DB::table('modelo3')->whereBetween('pregunta11', array(24, 35))->count()],
+            ['name' => '36-48 horas', 'valor' => DB::table('modelo3')->whereBetween('pregunta11', array(36, 47))->count()],
+            ['name' => '48-60 horas', 'valor' => DB::table('modelo3')->whereBetween('pregunta11', array(48, 59))->count()],
+            ['name' => '60-72 horas', 'valor' => DB::table('modelo3')->whereBetween('pregunta11', array(60, 72))->count()],
+        ];
+        $pregunta12 = [
+            ['name' => '0-30 minutos', 'valor' => DB::table('modelo3')->whereBetween('pregunta12', array(0, 29))->count()],
+            ['name' => '30-60 minutos', 'valor' => DB::table('modelo3')->whereBetween('pregunta12', array(30, 59))->count()],
+            ['name' => '60-90 minutos', 'valor' => DB::table('modelo3')->whereBetween('pregunta12', array(60, 89))->count()],
+            ['name' => '90-120 minutos', 'valor' => DB::table('modelo3')->whereBetween('pregunta12', array(90, 119))->count()],
+            ['name' => '120-150 minutos', 'valor' => DB::table('modelo3')->whereBetween('pregunta12', array(120, 149))->count()],
+            ['name' => '150-180 minutos', 'valor' => DB::table('modelo3')->whereBetween('pregunta12', array(150, 180))->count()],
+        ];
+        $pregunta13 = [
+            ['name' => '10-20 minutos', 'valor' => DB::table('modelo3')->whereBetween('pregunta13', array(0, 19))->count()],
+            ['name' => '20-30 minutos', 'valor' => DB::table('modelo3')->whereBetween('pregunta13', array(20, 29))->count()],
+            ['name' => '30-40 minutos', 'valor' => DB::table('modelo3')->whereBetween('pregunta13', array(30, 39))->count()],
+            ['name' => '40-50 minutos', 'valor' => DB::table('modelo3')->whereBetween('pregunta13', array(40, 49))->count()],
+            ['name' => '50-60 minutos', 'valor' => DB::table('modelo3')->whereBetween('pregunta13', array(50, 60))->count()],
+        ];
+        $pregunta14 = [
+            ['name' => '0 personas', 'valor' => DB::table('modelo3')->where('pregunta14', 0)->count()],
+            ['name' => '1 personas', 'valor' => DB::table('modelo3')->where('pregunta14', 1)->count()],
+            ['name' => '2 personas', 'valor' => DB::table('modelo3')->where('pregunta14', 2)->count()],
+            ['name' => '3 personas', 'valor' => DB::table('modelo3')->where('pregunta14', 3)->count()],
+            ['name' => '4 personas', 'valor' => DB::table('modelo3')->where('pregunta14', 4)->count()],
+            ['name' => '5 personas', 'valor' => DB::table('modelo3')->where('pregunta14', 5)->count()],
+        ];
+        $aux = DB::table('modelo3')->select('pregunta15')->get();
+        $enero = 0; $febrero = 0; $marzo = 0; $abril = 0; $mayo = 0; $junio = 0; $julio = 0; $agosto = 0; $septiembre = 0; $octubre = 0; $noviembre = 0; $diciembre = 0;
+        foreach ($aux as $key) {
+            $aux1 = explode('+', $key->pregunta15);
+            foreach ($aux1 as $a) {
+                if ($a == 'Enero') {$enero++;}
+                if ($a == 'Febrero') {$febrero++;}
+                if ($a == 'Marzo') {$marzo++;}
+                if ($a == 'Abril') {$abril++;}
+                if ($a == 'Mayo') {$mayo++;}
+                if ($a == 'Junio') {$junio++;}
+                if ($a == 'Julio') {$julio++;}
+                if ($a == 'Agosto') {$agosto++;}
+                if ($a == 'Septiembre') {$septiembre++;}
+                if ($a == 'Octubre') {$octubre++;}
+                if ($a == 'Noviembre') {$noviembre++;}
+                if ($a == 'Diciembre') {$diciembre++;}
+            }
+        }
+        $pregunta15 = [
+            ['name' => 'Enero', 'valor' => $enero],
+            ['name' => 'Febrero', 'valor' => $febrero],
+            ['name' => 'Marzo', 'valor' => $marzo],
+            ['name' => 'Abril', 'valor' => $abril],
+            ['name' => 'Mayo', 'valor' => $mayo],
+            ['name' => 'Junio', 'valor' => $junio],
+            ['name' => 'Julio', 'valor' => $julio],
+            ['name' => 'Agosto', 'valor' => $agosto],
+            ['name' => 'Septiembre', 'valor' => $septiembre],
+            ['name' => 'Octubre', 'valor' => $octubre],
+            ['name' => 'Noviembre', 'valor' => $noviembre],
+            ['name' => 'Diciembre', 'valor' => $diciembre],
+        ];
+        $aux = DB::table('modelo3')->select('pregunta16')->get();
+        $lunes = 0; $martes = 0; $miercoles = 0; $jueves = 0; $viernes = 0;
+        foreach ($aux as $key) {
+            $aux1 = explode('+', $key->pregunta16);
+            foreach ($aux1 as $a) {
+                if ($a == 'Lunes') {$lunes++;}
+                if ($a == 'Martes') {$martes++;}
+                if ($a == 'Miercoles') {$miercoles++;}
+                if ($a == 'Jueves') {$jueves++;}
+                if ($a == 'Viernes'){ $viernes++;}
+            }        
+        }
+        $pregunta16 = [
+            ['name' => 'Lunes', 'valor' => $lunes],
+            ['name' => 'Martes', 'valor' => $martes],
+            ['name' => 'Miercoles', 'valor' => $miercoles],
+            ['name' => 'Jueves', 'valor' => $jueves],
+            ['name' => 'Viernes', 'valor' => $viernes],
+        ];
+        $pregunta17 = [
+            ['name' => '1', 'valor' => DB::table('modelo3')->where('pregunta17', 1)->count()],
+            ['name' => '2', 'valor' => DB::table('modelo3')->where('pregunta17', 2)->count()],
+            ['name' => '3', 'valor' => DB::table('modelo3')->where('pregunta17', 3)->count()],
+            ['name' => '4', 'valor' => DB::table('modelo3')->where('pregunta17', 4)->count()],
+            ['name' => '5', 'valor' => DB::table('modelo3')->where('pregunta17', 5)->count()],
+            ['name' => '6', 'valor' => DB::table('modelo3')->where('pregunta17', 6)->count()],
+            ['name' => '7', 'valor' => DB::table('modelo3')->where('pregunta17', 7)->count()],
+            ['name' => '8', 'valor' => DB::table('modelo3')->where('pregunta17', 8)->count()],
+            ['name' => '9', 'valor' => DB::table('modelo3')->where('pregunta17', 9)->count()],
+            ['name' => '10', 'valor' => DB::table('modelo3')->where('pregunta17', 10)->count()],
+        ];
+        $pregunta18 = [
+            ['name' => '1', 'valor' => DB::table('modelo3')->where('pregunta18', 1)->count()],
+            ['name' => '2', 'valor' => DB::table('modelo3')->where('pregunta18', 2)->count()],
+            ['name' => '3', 'valor' => DB::table('modelo3')->where('pregunta18', 3)->count()],
+            ['name' => '4', 'valor' => DB::table('modelo3')->where('pregunta18', 4)->count()],
+            ['name' => '5', 'valor' => DB::table('modelo3')->where('pregunta18', 5)->count()],
+            ['name' => '6', 'valor' => DB::table('modelo3')->where('pregunta18', 6)->count()],
+            ['name' => '7', 'valor' => DB::table('modelo3')->where('pregunta18', 7)->count()],
+            ['name' => '8', 'valor' => DB::table('modelo3')->where('pregunta18', 8)->count()],
+            ['name' => '9', 'valor' => DB::table('modelo3')->where('pregunta18', 9)->count()],
+            ['name' => '10', 'valor' => DB::table('modelo3')->where('pregunta18', 10)->count()],
+        ];
+        $pregunta19 = [
+            ['name' => '1', 'valor' => DB::table('modelo3')->where('pregunta19', 1)->count()],
+            ['name' => '2', 'valor' => DB::table('modelo3')->where('pregunta19', 2)->count()],
+            ['name' => '3', 'valor' => DB::table('modelo3')->where('pregunta19', 3)->count()],
+            ['name' => '4', 'valor' => DB::table('modelo3')->where('pregunta19', 4)->count()],
+            ['name' => '5', 'valor' => DB::table('modelo3')->where('pregunta19', 5)->count()],
+            ['name' => '6', 'valor' => DB::table('modelo3')->where('pregunta19', 6)->count()],
+            ['name' => '7', 'valor' => DB::table('modelo3')->where('pregunta19', 7)->count()],
+            ['name' => '8', 'valor' => DB::table('modelo3')->where('pregunta19', 8)->count()],
+            ['name' => '9', 'valor' => DB::table('modelo3')->where('pregunta19', 9)->count()],
+            ['name' => '10', 'valor' => DB::table('modelo3')->where('pregunta19', 10)->count()],
+        ];
+        $pregunta20 = [
+            ['name' => 'Calidad', 'valor' => DB::table('modelo3')->where('pregunta20', 'Calidad')->count()],
+            ['name' => 'Servicio', 'valor' => DB::table('modelo3')->where('pregunta20', 'Servicio')->count()],
+            ['name' => 'Garantia', 'valor' => DB::table('modelo3')->where('pregunta20', 'Garantia')->count()],
+            ['name' => 'Precio', 'valor' => DB::table('modelo3')->where('pregunta20', 'Precio')->count()]
+        ];
+
+    	return view('estadisticas', [
+            'pregunta2' => $pregunta2,
+            'pregunta3' => $pregunta3,
+            'pregunta5' => $pregunta5,
+            'pregunta6' => $pregunta6,
+            'pregunta7' => $pregunta7,
+            'pregunta8' => $pregunta8,
+            'pregunta9' => $pregunta9,
+            'pregunta10' => $pregunta10,
+            'pregunta11' => $pregunta11,
+            'pregunta12' => $pregunta12,
+            'pregunta13' => $pregunta13,
+            'pregunta14' => $pregunta14,
+            'pregunta15' => $pregunta15,
+            'pregunta16' => $pregunta16,
+            'pregunta17' => $pregunta17,
+            'pregunta18' => $pregunta18,
+            'pregunta19' => $pregunta19,
+            'pregunta20' => $pregunta20,
+        ]);
     }
     public function store(Request $request){
 
@@ -121,18 +310,17 @@ class modelo3Controller extends Controller
 		$pregunta16 = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'];
 		$pregunta20 = ['Calidad', 'Servicio', 'Garantia', 'Precio'];
 
-		$resp15 = array_random($pregunta15, rand(1, 3));
-    	$resp16 = array_random($pregunta16, rand(1, 2));
-    	$preg15 = '';
-    	$preg16 = '';
-    	foreach ($resp15 as $value) {
-    		$preg15 .= $value . '+';
-    	}
-    	foreach ($resp16 as $value) {
-    		$preg16 .= $value . '+';
-    	}
-
     	while ($request->cantidad > 0) {
+            $resp15 = array_random($pregunta15, rand(1, 3));
+            $resp16 = array_random($pregunta16, rand(1, 2));
+            $preg15 = '';
+            $preg16 = '';
+            foreach ($resp15 as $value) {
+                $preg15 .= $value . '+';
+            }
+            foreach ($resp16 as $value) {
+                $preg16 .= $value . '+';
+            }
     		$preg = [
     			'pregunta1' => 'anonimo' . $request->cantidad,
     			'pregunta2' => array_random($pregunta2),
@@ -157,7 +345,6 @@ class modelo3Controller extends Controller
     		];
 			$request->cantidad--;
 			$this->guardar($preg);
-
     	}
     	return redirect('/');
     }

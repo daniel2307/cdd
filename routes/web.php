@@ -27,3 +27,5 @@ Route::post('/random', 'modelo3Controller@insertRandom');
 
 Route::post('/modelo3', 'modelo3Controller@store');
 Route::get('/aleatorio', 'modelo3Controller@aleatorio');
+
+Route::get('/estadisticas', 'modelo3Controller@resultados');
