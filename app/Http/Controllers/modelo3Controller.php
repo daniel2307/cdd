@@ -4,16 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use PDF;
+use App\Modelo3;
 use App\MetodoCongruencialMixto;
 
 class modelo3Controller extends Controller
 {
+    public function index(){
+        $modelo3 = DB::table('modelo3')->get();
+        return view('datos', compact('modelo3'));
+    }
 
+    // SACA LOS RESULTADOS DE LA DB Y LOS MUESTRA EN GRAFICAS
     public function resultados(){
         $pregunta2 = [
             ['name' => 'Masculino', 'valor' => DB::table('modelo3')->where('pregunta2', 'Masculino')->count()],
             ['name' => 'Femenino', 'valor' => DB::table('modelo3')->where('pregunta2', 'Femenino')->count()],
         ];
+        $pregunta2_ = DB::table('modelo3')->select('pregunta1', 'pregunta2')->get();
         $pregunta3 = [
             ['name' => '18-30 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta3', array(18, 29))->count()],
             ['name' => '30-45 años', 'valor' => DB::table('modelo3')->whereBetween('pregunta3', array(30, 44))->count()],
@@ -182,6 +190,7 @@ class modelo3Controller extends Controller
 
     	return view('estadisticas', [
             'pregunta2' => $pregunta2,
+            'pregunta2_' => $pregunta2_,
             'pregunta3' => $pregunta3,
             'pregunta5' => $pregunta5,
             'pregunta6' => $pregunta6,
@@ -201,6 +210,14 @@ class modelo3Controller extends Controller
             'pregunta20' => $pregunta20,
         ]);
     }
+
+    public function pdfdocument(){
+        $data = DB::table('modelo3')->select('pregunta1', 'pregunta2')->get();
+        $pdf = PDF::loadView('pdf.invoice', $data);
+        return $pdf->download('invoice.pdf');
+    }
+
+    // GUARDA EN LA BASE DE DATOS LO QUE SE LLENA EN LA ENCUESTA
     public function store(Request $request){
 
     	$request->pregunta6 = $request->pregunta61*12 + $request->pregunta62;
@@ -294,11 +311,13 @@ class modelo3Controller extends Controller
 		return redirect('/modelo3');
     }
 
+    // GENERA VALORES ALEATORIOS POR EL METODO CONGRUENCIAL MIXTO
     public function aleatorio(){
     	$valores = MetodoCongruencialMixto::Method(4, 5, 7, 8);
     	dd($valores);
     }
 
+    // PREPARA LOS DATOS E INGRESA LOS DATOS ALEATORIOS EN LA DB
     public function insertRandom(Request $request){
     	$this->borrarModelo3();
     	$pregunta2 = ['Masculino', 'Femenino'];
@@ -349,6 +368,7 @@ class modelo3Controller extends Controller
     	return redirect('/');
     }
 
+    // GUARDA LOS DATOS ALEATORIOS GENERADOS EN LA DB
     public function guardar($request){
     	DB::table('modelo3')->insert([
     		'pregunta1' => $request['pregunta1'], 
@@ -373,6 +393,8 @@ class modelo3Controller extends Controller
 		    'pregunta20' => $request['pregunta20'], 
 		]);
     }
+
+    // DADO UN RANGO DE FECHAS SACA ALEATORIAMENTE
     public function random_date($from, $to) {
 	    if (!$to) {
 	        $to = date('U');
@@ -385,6 +407,8 @@ class modelo3Controller extends Controller
 	    }
 	    return date('Y-m-d', rand($from, $to));
 	}
+
+    // BORRA DE LA TABLA MODELO3 TODA SU INFORMACION
     public function borrarModelo3(){
     	DB::table('modelo3')->delete();
     }

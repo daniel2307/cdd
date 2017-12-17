@@ -896,29 +896,60 @@
                     </div>
                     <!-- /.row -->
 
-                    <!-- torta -->
-                    <div id="pregunta2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-                    <!-- barra -->
+                    <div id="pregunta2"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview2" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+
                     <div id="pregunta3"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
-                    <!-- torta -->
-                    <div id="pregunta5" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-                    <!-- torta -->
-                    <div id="pregunta6" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-                    <!-- barra -->
+                    <a href="/pdfview3" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                    
+                    <div id="pregunta5"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview5" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+             
+                    <div id="pregunta6"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview6" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                    
                     <div id="pregunta7"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview7" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                    
                     <div id="pregunta8"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview8" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                 
                     <div id="pregunta9"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview9" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                   
                     <div id="pregunta10"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview10" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                    
                     <div id="pregunta11"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview11" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+
                     <div id="pregunta12"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview12" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+
                     <div id="pregunta13"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview13" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                    
                     <div id="pregunta14"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview14" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                    
                     <div id="pregunta15"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview15" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                    
                     <div id="pregunta16"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview16" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                    
                     <div id="pregunta17"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview17" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                    
                     <div id="pregunta18"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview18" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                    
                     <div id="pregunta19"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview19" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                    
                     <div id="pregunta20"  style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    <a href="/pdfview20" target="_blank" class="btn btn-primary" role="button">Ver Tabla</a>
+                    
                 </div>
                 <!-- /.container-fluid -->
 

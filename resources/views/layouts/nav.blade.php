@@ -22,24 +22,13 @@
                 <a href="/random"><i class="fa fa-fw fa-desktop"></i> Generar Datos</a>
             </li>
             <li class="list-group-item">
-                <a href="#"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                <a href="/datos"><i class="fa fa-fw fa-desktop"></i> Datos Generados</a>
             </li>
             <li class="list-group-item">
-                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                <ul id="demo" class="list-group collapse">
-                    <li class="list-group-item">
-                        <a href="#">Dropdown Item</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#">Dropdown Item</a>
-                    </li>
-                </ul>
+                <a href="/export"><i class="fa fa-fw fa-file"></i> Exportar a Excel</a>
             </li>
             <li class="list-group-item">
-                <a href="#"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-            </li>
-            <li class="list-group-item">
-                <a href="#"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                <a href="/pdf" target="_blank"><i class="fa fa-fw fa-dashboard"></i> Exportar a PDF</a>
             </li>
         </ul>
     </div>
